@@ -19,7 +19,6 @@ void setup() {
     AlfredoConnect.begin(bluetooth);
     RSL::initialize();
     RSL::setState(RSL_DISABLED);
-    leftMotor.setInverted(true);
 }
 
 void loop() {
