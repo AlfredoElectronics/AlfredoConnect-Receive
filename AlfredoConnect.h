@@ -19,10 +19,12 @@ class AlfredoConnectParser {
         uint8_t getRawAxis(uint8_t gamepad, uint8_t axis);
         bool buttonHeld(uint8_t gamepad, uint8_t button);
     private:
-        static constexpr uint8_t NUM_KEYS = 14; // 14 bytes = 112 bits for 106 keys, with 6 left over
-        static constexpr uint8_t MAX_GAMEPADS = 8;
-        static constexpr uint8_t MAX_AXES = 8;
-        static constexpr uint8_t MAX_BUTTONS = 8; // 8 bytes = 64 bits for max of 64 buttons
+        uint8_t readAndDiscard(Stream* inputStream, uint8_t *buffer, uint8_t bufferLen, uint8_t numToRead);
+        int readWithTimeout(Stream* inputStream);
+        static constexpr int NUM_KEYS = 14; // 14 bytes = 112 bits for 106 keys, with 6 left over
+        static constexpr int MAX_GAMEPADS = 8;
+        static constexpr int MAX_AXES = 8;
+        static constexpr int MAX_BUTTONS = 8; // 8 bytes = 64 bits for max of 64 buttons
         Stream* inputStream;
         bool suppressErrors = false;
         typedef struct {
