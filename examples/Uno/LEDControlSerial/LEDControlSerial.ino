@@ -1,6 +1,6 @@
 /**
  * Lights an Arduino or clone board's built-in LED when the "W" key is pressed in AlfredoConnect
- * while connected to the board's hardware serial (e.g. USB).
+ * while connected to the board's hardware serial (typically over USB).
  * 
  * TODO: Link basic setup here (board files, how to upload, how to pair Bluetooth, how to find and open port)
  */
@@ -15,6 +15,10 @@ void setup() {
 
 void loop() {
     AlfredoConnect.update();
-    if (AlfredoConnect.keyHeld(Key::W)) digitalWrite(LED_BUILTIN, HIGH);
-    else digitalWrite(LED_BUILTIN, LOW);
+
+    if (AlfredoConnect.keyHeld(Key::W)) {
+        digitalWrite(LED_BUILTIN, HIGH);
+    } else {
+        digitalWrite(LED_BUILTIN, LOW);
+    }
 }
