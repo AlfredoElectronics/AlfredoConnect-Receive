@@ -11,8 +11,8 @@
 /* These pins are labeled from the board's perspective, so the BLUETOOTH_RX
  * (receive) pin on the board connects to TX (transmit) on the Bluetooth
  * module, and vice versa. */
-static const int BLUETOOTH_RX = A0;
-static const int BLUETOOTH_TX = A1;
+static const int BLUETOOTH_RX = A3;
+static const int BLUETOOTH_TX = A2;
 
 SoftwareSerial bluetooth(BLUETOOTH_RX, BLUETOOTH_TX);
 
