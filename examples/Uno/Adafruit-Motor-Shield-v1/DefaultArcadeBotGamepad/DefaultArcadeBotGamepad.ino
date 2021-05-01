@@ -22,6 +22,7 @@ AF_DCMotor rightMotor(2);
 void setup() {
     bluetooth.begin(115200);
     AlfredoConnect.begin(bluetooth);
+    bluetooth.println("ArcadeBotGamepad started");
 }
 
 void loop() {

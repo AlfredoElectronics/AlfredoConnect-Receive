@@ -17,6 +17,8 @@ NoU_Drivetrain drivetrain(&leftMotor, &rightMotor);
 void setup() {
     bluetooth.begin("ESP32 Bluetooth");
     AlfredoConnect.begin(bluetooth);
+    bluetooth.println("ArcadeBotKeyboard started");
+
     RSL::initialize();
     RSL::setState(RSL_ENABLED);
 }

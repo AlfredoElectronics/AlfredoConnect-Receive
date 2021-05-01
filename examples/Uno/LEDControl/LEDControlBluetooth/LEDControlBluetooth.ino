@@ -19,6 +19,8 @@ SoftwareSerial bluetooth(BLUETOOTH_RX, BLUETOOTH_TX);
 void setup() {
     bluetooth.begin(115200);
     AlfredoConnect.begin(bluetooth);
+    bluetooth.println("LEDControlBluetooth started");
+
     pinMode(LED_BUILTIN, OUTPUT);
 }
 

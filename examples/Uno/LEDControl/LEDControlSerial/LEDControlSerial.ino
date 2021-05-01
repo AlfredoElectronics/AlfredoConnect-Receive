@@ -10,6 +10,8 @@
 void setup() {
     Serial.begin(115200);
     AlfredoConnect.begin(Serial);
+    Serial.println("LEDControlSerial started");
+
     pinMode(LED_BUILTIN, OUTPUT);
 }
 

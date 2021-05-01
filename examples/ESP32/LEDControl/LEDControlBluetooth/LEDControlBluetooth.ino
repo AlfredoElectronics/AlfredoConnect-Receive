@@ -15,6 +15,8 @@ BluetoothSerial bluetooth;
 void setup() {
     bluetooth.begin("ESP32 Bluetooth");
     AlfredoConnect.begin(bluetooth);
+    bluetooth.println("LEDControlBluetooth started");
+
     pinMode(LED_BUILTIN, OUTPUT);
 }
 
