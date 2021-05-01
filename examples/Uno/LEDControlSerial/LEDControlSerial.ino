@@ -8,7 +8,7 @@
 #include <AlfredoConnect.h>
 
 void setup() {
-    Serial.begin(9600);
+    Serial.begin(115200);
     AlfredoConnect.begin(Serial);
     pinMode(LED_BUILTIN, OUTPUT);
 }

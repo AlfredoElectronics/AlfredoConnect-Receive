@@ -20,7 +20,7 @@ AF_DCMotor leftMotor(1);
 AF_DCMotor rightMotor(2);
 
 void setup() {
-    bluetooth.begin(9600);
+    bluetooth.begin(115200);
     AlfredoConnect.begin(bluetooth);
 }
 

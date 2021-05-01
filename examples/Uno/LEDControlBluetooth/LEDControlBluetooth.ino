@@ -17,7 +17,7 @@ static const int BLUETOOTH_TX = A2;
 SoftwareSerial bluetooth(BLUETOOTH_RX, BLUETOOTH_TX);
 
 void setup() {
-    bluetooth.begin(9600);
+    bluetooth.begin(115200);
     AlfredoConnect.begin(bluetooth);
     pinMode(LED_BUILTIN, OUTPUT);
 }
