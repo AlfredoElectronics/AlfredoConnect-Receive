@@ -2,13 +2,13 @@
  * Lights an Arduino or clone board's built-in LED when the "W" key is pressed in AlfredoConnect
  * while connected to the board's hardware serial (typically over USB).
  * 
- * Detailed library instruction can be found at https://github.com/AlfredoElectronics/AlfredoConnect-Receive/
+ * Detailed instructions can be found at https://github.com/AlfredoElectronics/AlfredoConnect-Receive/.
  */
 
 #include <AlfredoConnect.h>
 
 void setup() {
-    Serial.begin(115200);
+    Serial.begin(9600);
     AlfredoConnect.begin(Serial);
     Serial.println("LEDControlSerial started");
 

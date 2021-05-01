@@ -3,7 +3,7 @@
  * with a gamepad from AlfredoConnect. The AFMotor library, for the Adafruit Motor Shield
  * v1 can be found at https://github.com/adafruit/Adafruit-Motor-Shield-library.
  *
- * Detailed library instruction can be found at https://github.com/AlfredoElectronics/AlfredoConnect-Receive/
+ * Detailed instructions can be found at https://github.com/AlfredoElectronics/AlfredoConnect-Receive/.
  */
 
 #include <AlfredoConnect.h>
@@ -22,7 +22,7 @@ AF_DCMotor leftMotor(1);
 AF_DCMotor rightMotor(2);
 
 void setup() {
-    bluetooth.begin(115200);
+    bluetooth.begin(9600);
     AlfredoConnect.begin(bluetooth);
     bluetooth.println("ArcadeBotKeyboard started");
 }

@@ -2,7 +2,7 @@
  * Lights an Arduino or clone board's built-in LED when the "W" key is pressed in
  * AlfredoConnect while connected to the ESP32's Bluetooth.
  * 
- * Detailed library instruction can be found at https://github.com/AlfredoElectronics/AlfredoConnect-Receive/
+ * Detailed instructions can be found at https://github.com/AlfredoElectronics/AlfredoConnect-Receive/.
  */
 
 #include <AlfredoConnect.h>
@@ -17,7 +17,7 @@ static const int BLUETOOTH_TX = A2;
 SoftwareSerial bluetooth(BLUETOOTH_RX, BLUETOOTH_TX);
 
 void setup() {
-    bluetooth.begin(115200);
+    bluetooth.begin(9600);
     AlfredoConnect.begin(bluetooth);
     bluetooth.println("LEDControlBluetooth started");
 

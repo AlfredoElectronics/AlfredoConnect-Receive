@@ -2,7 +2,7 @@
  * Example code for a robot using an ESP32 and NoU2 controlled with the keyboard from AlfredoConnect.
  * The NoU2 library can be found at https://github.com/AlfredoElectronics/Alfredo-NoU2.
  *
- * Detailed library instruction can be found at https://github.com/AlfredoElectronics/AlfredoConnect-Receive/
+ * Detailed instructions can be found at https://github.com/AlfredoElectronics/AlfredoConnect-Receive/.
  */
 
 #include <AlfredoConnect.h>
