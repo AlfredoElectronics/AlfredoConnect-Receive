@@ -2,7 +2,7 @@
  * Lights the ESP32's built-in LED when the "W" key is pressed in AlfredoConnect while
  * connected to the ESP32's hardware serial (typically over USB).
  * 
- * TODO: Link basic setup here (board files, how to upload, how to pair Bluetooth, how to find and open port)
+ * Detailed library instruction can be found at https://github.com/AlfredoElectronics/AlfredoConnect-Receive/
  */
 
 #include <AlfredoConnect.h>

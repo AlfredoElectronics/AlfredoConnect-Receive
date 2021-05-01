@@ -2,6 +2,8 @@
  * Example code for a robot using an Arduino and an Adafruit Motor Shield v1 controlled
  * with a gamepad from AlfredoConnect. The AFMotor library, for the Adafruit Motor Shield
  * v1 can be found at https://github.com/adafruit/Adafruit-Motor-Shield-library.
+ * 
+ * Detailed library instruction can be found at https://github.com/AlfredoElectronics/AlfredoConnect-Receive/
  */
 
 #include <AlfredoConnect.h>
