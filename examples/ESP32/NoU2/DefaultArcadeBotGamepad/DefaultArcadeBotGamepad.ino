@@ -15,7 +15,7 @@ NoU_Motor rightMotor(2);
 NoU_Drivetrain drivetrain(&leftMotor, &rightMotor);
 
 void setup() {
-    bluetooth.begin("GoldBot");
+    bluetooth.begin("ESP32 Bluetooth");
     AlfredoConnect.begin(bluetooth);
     RSL::initialize();
     RSL::setState(RSL_DISABLED);
