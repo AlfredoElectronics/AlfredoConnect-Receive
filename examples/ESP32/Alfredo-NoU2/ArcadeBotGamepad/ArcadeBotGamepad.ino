@@ -1,6 +1,8 @@
 /**
  * Example code for a robot using an ESP32 and NoU2 controlled with a gamepad from AlfredoConnect.
  * The NoU2 library can be found at https://github.com/AlfredoElectronics/Alfredo-NoU2.
+ *
+ * Detailed instructions can be found at https://github.com/AlfredoElectronics/AlfredoConnect-Receive/.
  */
 
 #include <AlfredoConnect.h>
@@ -15,8 +17,10 @@ NoU_Motor rightMotor(2);
 NoU_Drivetrain drivetrain(&leftMotor, &rightMotor);
 
 void setup() {
-    bluetooth.begin("GoldBot");
+    bluetooth.begin("ESP32 Bluetooth");
     AlfredoConnect.begin(bluetooth);
+    bluetooth.println("ArcadeBotGamepad started");
+
     RSL::initialize();
     RSL::setState(RSL_DISABLED);
 }
