@@ -28,9 +28,14 @@ void AlfredoConnectParser::begin(Stream& inputStream, bool suppressErrors) {
     begin(inputStream);
 }
 
-// TODO: error codes and perror
+/**
+ * Parses packets from AlfredoConnect into keyboard and gamepad states.
+ * 
+ * @return 0 when successful, which includes when no packets were the stream. Return
+ * values over 0 are failure codes.
+ */
 uint8_t AlfredoConnectParser::update() {
-    if (inputStream == NULL) return 1; // error code
+    if (inputStream == NULL) return 1;
     uint8_t keysPressed[NUM_KEYS];
     int keysPressedSize = 0;
     Gamepad gamepadsTemp[MAX_GAMEPADS];
@@ -41,30 +46,30 @@ uint8_t AlfredoConnectParser::update() {
             readWithTimeout(inputStream); // read the hash
             
             // Keyboard
-            if ((keysPressedSize = readWithTimeout(inputStream)) < 0) return 2; // error code
+            if ((keysPressedSize = readWithTimeout(inputStream)) < 0) return 2;
             if (readAndDiscard(inputStream, keysPressed, NUM_KEYS, keysPressedSize) == 1) return 3;
 
             // Gamepads
-            if ((gamepadsSizeTemp = readWithTimeout(inputStream)) < 0) return 4; // error code
+            if ((gamepadsSizeTemp = readWithTimeout(inputStream)) < 0) return 4;
             for (uint8_t i = 0; i < min(gamepadsSizeTemp, MAX_GAMEPADS); i++) {
 
                 // Axes
-                if ((gamepadsTemp[i].axesSize = readWithTimeout(inputStream)) < 0) return 5; // error code
-                if (readAndDiscard(inputStream, gamepadsTemp[i].axes, MAX_AXES, gamepadsTemp[i].axesSize) < 0) return 6; // error code
+                if ((gamepadsTemp[i].axesSize = readWithTimeout(inputStream)) < 0) return 5;
+                if (readAndDiscard(inputStream, gamepadsTemp[i].axes, MAX_AXES, gamepadsTemp[i].axesSize) < 0) return 6;
 
                 // Buttons
-                if ((gamepadsTemp[i].buttonsSize = readWithTimeout(inputStream)) < 0) return 7; // error code
+                if ((gamepadsTemp[i].buttonsSize = readWithTimeout(inputStream)) < 0) return 7;
                 uint8_t buttonsBytes = (gamepadsTemp[i].buttonsSize / 8) + (gamepadsTemp[i].buttonsSize % 8 == 0 ? 0 : 1);
-                if (readAndDiscard(inputStream, gamepadsTemp[i].buttons, MAX_BUTTONS, buttonsBytes) < 0) return 9; // timeout error code
+                if (readAndDiscard(inputStream, gamepadsTemp[i].buttons, MAX_BUTTONS, buttonsBytes) < 0) return 9;
             }
 
             // If more than 8 gamepads were sent, discard the extras
             for (uint8_t i = MAX_GAMEPADS; i < gamepadsSizeTemp; i++) {
                 int axesSize;
-                if ((axesSize = readWithTimeout(inputStream)) < 0) return 10; // error code
+                if ((axesSize = readWithTimeout(inputStream)) < 0) return 10;
                 for (uint8_t j = 0; j < axesSize; j++) if (readWithTimeout(inputStream) == -1) return 11;
                 int buttonsSize;
-                if ((buttonsSize = readWithTimeout(inputStream)) < 0) return 12; // error code
+                if ((buttonsSize = readWithTimeout(inputStream)) < 0) return 12;
                 uint8_t buttonsBytes = (gamepadsTemp[i].buttonsSize / 8) + (gamepadsTemp[i].buttonsSize % 8 == 0 ? 0 : 1);
                 for (uint8_t j = 0; j < buttonsBytes; j++) if (readWithTimeout(inputStream) == -1) return 13;
             }
@@ -91,6 +96,9 @@ uint8_t AlfredoConnectParser::readAndDiscard(Stream* inputStream, uint8_t *buffe
     return 0;
 }
 
+/**
+ * Similar to calling `read` on the provided stream, but with a timeout like `readBytes`.
+ */
 int AlfredoConnectParser::readWithTimeout(Stream* inputStream) {
     uint8_t c;
     if (inputStream->readBytes(&c, 1) != 1) return -1;
