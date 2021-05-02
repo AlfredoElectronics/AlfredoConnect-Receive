@@ -5,7 +5,7 @@ This library for Arduino and ESP32 parses input from [AlfredoConnect](https://gi
 
 ## Installation
 
-[Click here to download this library as a ZIP archive](https://github.com/AlfredoElectronics/Alfredo-NoU2/archive/refs/heads/master.zip).
+[Click here to download this library as a ZIP archive](https://github.com/AlfredoElectronics/AlfredoConnect-Receive/archive/refs/heads/master.zip).
 
 To add this library to the [Arduino IDE](https://www.arduino.cc/en/software), click `Sketch` in the top menu bar, go to `Include Library`, and click `Add .ZIP Library...`. Browse to the directory where you downloaded the ZIP archive, and select the archive. Now, if you click `File` in the top menu bar, go to `Examples`, and scroll down through the list, you should see `AlfredoConnect-Receive` under `Examples from Custom Libraries`. There are several examples available:
 
