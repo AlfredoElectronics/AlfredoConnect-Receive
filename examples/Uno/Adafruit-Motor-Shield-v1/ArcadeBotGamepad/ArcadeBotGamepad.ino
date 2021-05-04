@@ -28,11 +28,15 @@ void setup() {
 }
 
 void loop() {
-    AlfredoConnect.update();
 
     if (AlfredoConnect.getGamepadCount() >= 1) {
-        arcadeDrive(-AlfredoConnect.getAxis(0, 1), AlfredoConnect.getAxis(0, 0));
+        float throttle = -AlfredoConnect.getAxis(0, 1);
+        float rotation = AlfredoConnect.getAxis(0, 0);
+        
+        arcadeDrive(throttle, rotation);
     }
+
+    AlfredoConnect.update();
 }
 
 void arcadeDrive(float throttle, float rotation) {
