@@ -25,11 +25,12 @@ void setup() {
 }
 
 void loop() {
-    AlfredoConnect.update();
 
     if (AlfredoConnect.keyHeld(Key::W)) {
         digitalWrite(LED_BUILTIN, HIGH);
     } else {
         digitalWrite(LED_BUILTIN, LOW);
     }
+
+    AlfredoConnect.update();
 }
