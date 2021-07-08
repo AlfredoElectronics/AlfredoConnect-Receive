@@ -31,7 +31,7 @@ void loop() {
         float throttle = -AlfredoConnect.getAxis(0, 1);
         float rotation = AlfredoConnect.getAxis(0, 0);
         
-        drivetrain.arcadeDrive(-AlfredoConnect.getAxis(0, 1), AlfredoConnect.getAxis(0, 0));
+        drivetrain.arcadeDrive(throttle, rotation);
 
         RSL::setState(RSL_ENABLED);
     } else {
