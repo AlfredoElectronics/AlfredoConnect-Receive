@@ -23,11 +23,11 @@ You should already have the Arduino IDE with this library added. If not, follow 
 
 2. **Open the `LEDControlSerialESP32` example**. In the Arduino IDE, go to `File` > `Examples` > `AlfredoConnect-Receive` > `ESP32` > `LEDControl` > `LEDControlSerialESP32`. This will open a new window with the example opened. You can close the old one.
 
-3. **Connect your ESP32 and select the COM port**. Connect your ESP32 to your computer using a micro USB cable. In the Arduino IDE, select the corresponding COM port under `Tools` > `Port`. The correct COM port may say `(Silicon Labs)` next to it. If none of them do, you can unplug and replug the USB to see which COM port disappears and reappears.
+3. **Connect your ESP32 and select the COM port**. Connect your ESP32 to your computer using a micro USB cable. In the Arduino IDE, select the corresponding COM port under `Tools` > `Port`. The correct COM port may say `(Silicon Labs)` next to it. If none of them do, you can unplug and replug the USB to see which COM port disappears and reappears. If you cannot find any COM port for the ESP32, try installing the appropriate driver from https://www.silabs.com/developers/usb-to-uart-bridge-vcp-drivers.
 
 4. **Select ESP32 as the board type**. In the Arduino IDE, go to `Tools` > `Board` > `ESP32 Arduino` and select `ESP32 Dev Module`. On older versions of Arduino, it may just be `Tools` > `Board` > `ESP32 Dev Module`.
 
-5. **Upload `LEDControlSerialESP32` to your ESP32**. In the window with `LEDControlSerialESP32` opened, click the upload button (the arrow in the top left). When the console on the bottom of the window starts showing `Connecting....._____.....`, hold down the `BOOT` button on the ESP32.
+5. **Upload `LEDControlSerialESP32` to your ESP32**. In the window with `LEDControlSerialESP32` opened, click the upload button (the arrow in the top left). If the console on the bottom of the window starts showing `Connecting....._____.....`, hold down the `BOOT` button on the ESP32.
 
 6. **Download, install, and open AlfredoConnect**. Go to the [AlfredoConnect Releases page](https://github.com/AlfredoElectronics/AlfredoConnect-Desktop/releases) and follow the instructions to download the latest release. Run the downloaded executable, which will install AlfredoConnect on your computer. Then, run the installed program.
 
