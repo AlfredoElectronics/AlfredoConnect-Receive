@@ -21,7 +21,7 @@ You should already have the Arduino IDE with this library added. If not, follow 
 
 1. **Configure the Arduino IDE to upload to an ESP32.** Check out [this board configuration tutorial](https://randomnerdtutorials.com/installing-the-esp32-board-in-arduino-ide-windows-instructions/) for instructions on how to do that. STOP AFTER STEP 2 OF 'Testing the Installation'.
 
-2. **Open the `LEDControlSerialESP32` example**. In the Arduino IDE, go to `File` > `Examples` > `AlfredoConnect-Receive` > `ESP32` > `LEDControl` > `LEDControlSerialESP32`. This will open a new window with the example opened. You can close the old one.
+2. **Open the `LEDControlSerialESP32` example**. In the Arduino IDE, go to `File` > `Examples` > `AlfredoConnect-Receive` > `LEDControlSerialESP32`. This will open a new window with the example opened. You can close the old one.
 
 3. **Connect your ESP32 and select the COM port**. Connect your ESP32 to your computer using a micro USB cable. In the Arduino IDE, select the corresponding COM port under `Tools` > `Port`. The correct COM port may say `(Silicon Labs)` next to it. If none of them do, you can unplug and replug the USB to see which COM port disappears and reappears. If you cannot find any COM port for the ESP32, try installing the appropriate driver from https://www.silabs.com/developers/usb-to-uart-bridge-vcp-drivers.
 
@@ -33,7 +33,7 @@ You should already have the Arduino IDE with this library added. If not, follow 
 
 7. **Connect AlfredoConnect to the ESP32**. With the ESP32 connected to your computer, click the `Serial port` dropdown and select the same COM port you used to upload to the ESP32. Click `Open` and a connection to the ESP32 should start. Now, holding the `W` key on your keyboard should light up the built-in blue LED on the ESP32. Once you're done, be sure to click `Close`.
 
-8. **Open the `LEDControlBluetoothESP32` example**. In the Arduino IDE, go to `File` > `Examples` > `AlfredoConnect-Receive` > `ESP32` > `LEDControl` > `LEDControlBluetoothESP32`.
+8. **Open the `LEDControlBluetoothESP32` example**. In the Arduino IDE, go to `File` > `Examples` > `AlfredoConnect-Receive` > `LEDControlBluetoothESP32`.
 
 9. **Edit the example and upload**. Before uploading the example, it's recommended that you edit the line that says `bluetooth.begin("ESP32 Bluetooth")` to change `ESP32 Bluetooth` to a unique name for your ESP32. After you pair with the ESP32 under a certain name, you'll need to restart your computer to re-pair if the name changes, so use this same name every time you upload a program that uses Bluetooth to the ESP32. Once that's done, upload the example.
 
@@ -51,7 +51,7 @@ This tutorial will guide you through uploading an example program to your ESP32 
 
 2. **Add this library to the Arduino IDE**. In the Arduino IDE, Click `Sketch` > `Include Library` > `Add .ZIP Library...`, and select the ZIP file you downloaded.
 
-3. **Open an ESP32 Robot example**. In the Arduino IDE, go to `File` > `Examples` > `AlfredoConnect-Receive` > `ESP32` > `Alfredo-NoU2`. If you have a gamepad to connect to your computer, open `ArcadeBotGamepadESP32`. Otherwise, open `ArcadeBotKeyboardESP32`.
+3. **Open an ESP32 Robot example**. In the Arduino IDE, go to `File` > `Examples` > `Alfredo-NoU2`. Open `ArcadeBotKeyboardESP32`.
 
 4. **Edit the example and upload**. Before uploading, remember to change the line `bluetooth.begin("ESP32 Bluetooth")` to use the unique name you chose for your ESP32. Once that's done, upload the example.
 
@@ -60,22 +60,5 @@ This tutorial will guide you through uploading an example program to your ESP32 
 6. **Connect to the ESP32**. Select the Bluetooth COM port for your ESP32 and click `Open`. The example should drive the motors connected to ports 1 and 2 on the NoU2 when you provide input. For the gamepad example, you can control them with axes 0 and 1. For the keyboard example, you can control them with the `WASD` keys.
 
 After completing this tutorial, your computer should be all set up to develop code to control an ESP32 and NoU2 using AlfredoConnect.
-
-## Examples
-
-First, follow the [installation tutorial](#installation). To open an example in the Arduino IDE, go to `File` in the top menu bar, go to `Examples`, and scroll down through the list. You should see `AlfredoConnect-Receive` under `Examples from Custom Libraries`. There are several examples available:
-
- * For ESP32:
-   * [`LEDControl/LEDControlSerial`](examples/ESP32/LEDControl/LEDControlSerial/LEDControlSerial.ino): Turn on the built-in LED when `W` is pressed in AlfredoConnect when connected over hardware serial (typically USB).
-   * [`LEDControl/LEDControlBluetooth`](examples/ESP32/LEDControl/LEDControlBluetooth/LEDControlBluetooth.ino): Turn on the built-in LED when `W` is pressed in AlfredoConnect when connected over Bluetooth.
-   * Using the [Alfredo NoU2](https://github.com/AlfredoElectronics/Alfredo-NoU2):
-     * [`Alfredo-NoU2/ArcadeBotKeyboard`](examples/ESP32/Alfredo-NoU2/ArcadeBotKeyboard/ArcadeBotKeyboard.ino): Drives a robot from AlfredoConnect using `WASD` on the keyboard.
-     * [`Alfredo-NoU2/ArcadeBotGamepad`](examples/ESP32/Alfredo-NoU2/ArcadeBotGamepad/ArcadeBotGamepad.ino): Drives a robot from AlfredoConnect using a gamepad.
-* For Uno boards:
-   * [`LEDControl/LEDControlSerial`](examples/Uno/LEDControl/LEDControlSerial/LEDControlSerial.ino): Turn on the built-in LED when `W` is pressed in AlfredoConnect when connected over hardware serial (typically USB).
-   * [`LEDControl/LEDControlBluetooth`](examples/Uno/LEDControl/LEDControlBluetooth/LEDControlBluetooth.ino): Turn on the built-in LED when `W` is pressed in AlfredoConnect when connected over Bluetooth.
-   * Using the [Adafruit Motor Shield v1](https://github.com/adafruit/Adafruit_Motor-Shield-v1):
-     * [`Adafruit-Motor-Shield-v1/ArcadeBotKeyboard`](examples/Uno/Adafruit-Motor-Shield-v1/ArcadeBotKeyboard/ArcadeBotKeyboard.ino): Drives a robot from AlfredoConnect using `WASD` on the keyboard.
-     * [`Adafruit-Motor-Shield-v1/ArcadeBotGamepad`](examples/Uno/Adafruit-Motor-Shield-v1/ArcadeBotGamepad/ArcadeBotGamepad.ino): Drives a robot from AlfredoConnect using a gamepad.
 
 [download]: https://github.com/AlfredoElectronics/AlfredoConnect-Receive/archive/refs/heads/master.zip
