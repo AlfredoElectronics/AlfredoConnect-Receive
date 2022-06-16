@@ -51,7 +51,7 @@ This tutorial will guide you through uploading an example program to your ESP32 
 
 2. **Add this library to the Arduino IDE**. In the Arduino IDE, Click `Sketch` > `Include Library` > `Add .ZIP Library...`, and select the ZIP file you downloaded.
 
-3. **Open an ESP32 Robot example**. In the Arduino IDE, go to `File` > `Examples` > `Alfredo-NoU2`. Open `ArcadeBotKeyboardESP32`.
+3. **Open an ESP32 Robot example**. In the Arduino IDE, go to `File` > `Examples` > `AlfredoConnect-Receive`. Open `ArcadeBotKeyboardESP32`.
 
 4. **Edit the example and upload**. Before uploading, remember to change the line `bluetooth.begin("ESP32 Bluetooth")` to use the unique name you chose for your ESP32. Once that's done, upload the example.
 
