@@ -19,7 +19,7 @@ This tutorial will guide you through uploading an example program to your ESP32 
 
 You should already have the Arduino IDE with this library added. If not, follow the [installation](#installation) tutorial.
 
-1. **Configure the Arduino IDE to upload to an ESP32.** Check out [this board configuration tutorial](https://randomnerdtutorials.com/installing-the-esp32-board-in-arduino-ide-windows-instructions/) for instructions on how to do that.
+1. **Configure the Arduino IDE to upload to an ESP32.** Check out [this board configuration tutorial](https://randomnerdtutorials.com/installing-the-esp32-board-in-arduino-ide-windows-instructions/) for instructions on how to do that. STOP AFTER STEP 2 OF 'Testing the Installation'.
 
 2. **Open the `LEDControlSerialESP32` example**. In the Arduino IDE, go to `File` > `Examples` > `AlfredoConnect-Receive` > `ESP32` > `LEDControl` > `LEDControlSerialESP32`. This will open a new window with the example opened. You can close the old one.
 
