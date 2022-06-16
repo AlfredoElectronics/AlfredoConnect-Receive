@@ -47,15 +47,17 @@ You should already have the Arduino IDE with this library added. If not, follow 
 
 This tutorial will guide you through uploading an example program to your ESP32 with an attached Alfredo NoU2 that spins motors using input from AlfredoConnect.
 
-You should already have the Arduino IDE and AlfredoConnect with your computer set up to connect to your ESP32 over Bluetooth. The Arduino IDE should be set up to upload to an ESP32, and it should have both the Alfredo-NoU2 library and the AlfredoConnect-Receive library added. If not, follow the [basic setup tutorial for Alfredo-NoU2](https://github.com/AlfredoElectronics/Alfredo-NoU2#basic-setup), the [installation tutorial for AlfredoConnect-Receive](#installation), and the [ESP32 tutorial for AlfredoConnect-Receive](#esp32) first.
+1. **Download the Alfredo-NoU2 library as a ZIP**. Click [here](https://github.com/AlfredoElectronics/Alfredo-NoU2/archive/refs/heads/master.zip) to start the download.
 
-1. **Open an ESP32 Robot example**. In the Arduino IDE, go to `File` > `Examples` > `AlfredoConnect-Receive` > `ESP32` > `Alfredo-NoU2`. If you have a gamepad to connect to your computer, open `ArcadeBotGamepadESP32`. Otherwise, open `ArcadeBotKeyboardESP32`.
+2. **Add this library to the Arduino IDE**. In the Arduino IDE, Click `Sketch` > `Include Library` > `Add .ZIP Library...`, and select the ZIP file you downloaded.
 
-2. **Edit the example and upload**. Before uploading, remember to change the line `bluetooth.begin("ESP32 Bluetooth")` to use the unique name you chose for your ESP32. Once that's done, upload the example.
+3. **Open an ESP32 Robot example**. In the Arduino IDE, go to `File` > `Examples` > `AlfredoConnect-Receive` > `ESP32` > `Alfredo-NoU2`. If you have a gamepad to connect to your computer, open `ArcadeBotGamepadESP32`. Otherwise, open `ArcadeBotKeyboardESP32`.
 
-3. **Open AlfredoConnect**. If you're using the gamepad example, connect the gamepad to your computer and press some buttons. It should show up in the `Gamepads` panel in AlfredoConnect. You can click on the label with the gamepad's name to see the axes and buttons associated with it. The numbers labelling the axes and buttons are the same ones used to access the axes and buttons in your ESP32 program.
+4. **Edit the example and upload**. Before uploading, remember to change the line `bluetooth.begin("ESP32 Bluetooth")` to use the unique name you chose for your ESP32. Once that's done, upload the example.
 
-4. **Connect to the ESP32**. Select the Bluetooth COM port for your ESP32 and click `Open`. The example should drive the motors connected to ports 1 and 2 on the NoU2 when you provide input. For the gamepad example, you can control them with axes 0 and 1. For the keyboard example, you can control them with the `WASD` keys.
+5. **Open AlfredoConnect**. If you're using the gamepad example, connect the gamepad to your computer and press some buttons. It should show up in the `Gamepads` panel in AlfredoConnect. You can click on the label with the gamepad's name to see the axes and buttons associated with it. The numbers labelling the axes and buttons are the same ones used to access the axes and buttons in your ESP32 program.
+
+6. **Connect to the ESP32**. Select the Bluetooth COM port for your ESP32 and click `Open`. The example should drive the motors connected to ports 1 and 2 on the NoU2 when you provide input. For the gamepad example, you can control them with axes 0 and 1. For the keyboard example, you can control them with the `WASD` keys.
 
 After completing this tutorial, your computer should be all set up to develop code to control an ESP32 and NoU2 using AlfredoConnect.
 
